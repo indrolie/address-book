@@ -49,18 +49,26 @@ const addStorage = newData => {
 
 const getContact = () => {
   let getData = localStorage.getItem("Contact_List");
-  let contact = JSON.parse("getData");
+  let contact = JSON.parse(getData);
+  const storageLength = contact.length;
 
-  document.getElementById("show-name").innerHTML = "Name: " + contact[0];
-  document.getElementById("show-email").innerHTML = "Email: " + contact[1];
-  document.getElementById("show-phone-number").innerHTML =
-    "Phone Number: " + contact[2];
+  let i = 0;
+  for (i; i < storageLength; i++) {
+    const contactInfo = contact[i];
+
+    document.getElementById("show-name").innerHTML = "Name: " + contactInfo[0];
+    document.getElementById("show-email").innerHTML =
+      "Email: " + contactInfo[1];
+    document.getElementById("show-phone-number").innerHTML =
+      "Phone Number: " + contactInfo[2];
+  }
 };
 
 const runAll = () => {
   checkName();
   checkEmail();
   addContact();
+  getContact();
 };
 
 buttonAdd.addEventListener("click", runAll);
