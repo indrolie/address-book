@@ -13,7 +13,7 @@
 
 <body>
     <div class="container">
-        <h1>Manage your contact</h1>
+        <h1>Add your contact</h1>
         <div class="form">
             <div class="row">
                 <div class="col-sm-12">
@@ -25,17 +25,18 @@
             <div class="row">
                 <div class="col-sm-12">
                     <input type="email" id="email" placeholder="example@mail.com">
+                    <label id="error-email" class="error"></label>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-sm-3">
-                    <input type="number" id="phone-number" placeholder="Enter the phone number">
+                <div class="col-sm-12">
+                    <input type="text" id="phone-number" placeholder="Enter the phone number">
+                    <span class="optional">(optional)</span>
                 </div>
-                <div class="col-sm-9">
-                    <input type="submit" id="button-add" value="Add">
-                </div>
+
             </div>
+            <input type="submit" id="button-add" class="button-add" value="Add">
         </div>
 
         <div id="list">
